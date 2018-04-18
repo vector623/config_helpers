@@ -9,5 +9,5 @@ systemd.service: environment_variables.sh systemd.service.template
 config: environment_variables.bat systemd.service
 
 clean:
-	rm environment_variables.bat
-	rm systemd.service
+	-rm environment_variables.bat
+	-rm systemd.service
