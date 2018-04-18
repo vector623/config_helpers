@@ -10,9 +10,9 @@ $environment_variables_projected = $environment_variables_filtered |
         Name = "batchline"; 
         Expression = { 
             $envvars = $_.
-                        ToString().
-                        Replace("export ","").
-                        Split("=")
+                ToString().
+                Replace("export ","").
+                Split("=")
             $("setx -m " + $_.ToString().Replace("export ","").Split("=")[0] + " " + $envvars[1])
         }
 }
