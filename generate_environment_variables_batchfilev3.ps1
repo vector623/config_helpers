@@ -2,10 +2,8 @@
 
 param([string] $environments_variables_file)
 
-$environment_variable_lines = Get-Content -Path $environments_variables_file
-$environment_variables_filtered = $environment_variable_lines | 
-    Where-Object {$_ -like "export*"}
-$environment_variables_projected = $environment_variables_filtered | 
+$environment_variables_batchlines = Get-Content -Path $environments_variables_file |
+    Where-Object {$_ -like "export*"} |
     Select-Object @{ 
         Name = "batchline"; 
         Expression = { 
@@ -16,4 +14,7 @@ $environment_variables_projected = $environment_variables_filtered |
             $("setx -m " + $_.ToString().Replace("export ","").Split("=")[0] + " " + $envvars[1])
         }
     }
-$environment_variables_projected | Select -Expand batchline | Out-File -FilePath 'environment_variables.bat'
+
+$environment_variables_batchlines | 
+    Select -Expand batchline | 
+    Out-File -FilePath 'environment_variables.bat'
