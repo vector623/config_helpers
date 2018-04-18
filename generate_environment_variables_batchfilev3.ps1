@@ -20,7 +20,7 @@ $environment_variables_batchlines = Get-Content -Path $environments_variables_fi
                 ToString().
                 Replace("export ","").
                 Split("=")
-            $("setx -m " + $_.ToString().Replace("export ","").Split("=")[0] + " " + $envvars[1])
+            $("setx -m " + $envvars[0] + " " + $envvars[1])
         }
     }
 
