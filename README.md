@@ -12,7 +12,8 @@ I prefer to use Makefiles to help automate building these configs (along w/the r
 deployment).  However, string manipulation with bash is a real pain.  So I've opted to use powershell, which I've found
 to be much more reliable at handling and manipulating text.  
 
-Bash has caused so many problems when it comes to string quoting and special characters.  What took hours of effort and ultimately resulted in failure to write a robust bash script to generate systemd files w/the environment variables 
+Bash has caused so many problems when it comes to string quoting and special characters.  What took hours of effort and 
+ultimately resulted in failure to write a robust bash script to generate systemd files w/the environment variables 
 loaded took less than an hour in powershell, WITH PRACTICALLY NO PRIOR POWERSHELL EXPERIENCE.  I will add that I've got
 a lot of .Net development experience, which was sped up my powershell development quite nicesly.
 
@@ -22,9 +23,15 @@ a lot of .Net development experience, which was sped up my powershell developmen
 The makefile must also be run in linux (if you're on windows, use the [windows linux subsystem][3]).
 
 ## generate configs
-run `make config` to read in `environment_variables.sh` and `systemd.service.template` and generate both `environment_variables.bat` and `systemd.service`
+run `make config` to read in `environment_variables.sh` and `systemd.service.template` and generate both 
+`environment_variables.bat` and `systemd.service`
 
 run `make clean` to delete the generated files
+
+## notes
+Powershell has multiple syntax flavors. `generate_environment_variables_batchfile.ps1` will probably look more familiar 
+to .Net developers, while `generate_environment_variables_batchfilev2.ps1` is probably the more common way to do the 
+same job
 
 [1]: https://github.com/StackExchange/blackbox
 [2]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux 
