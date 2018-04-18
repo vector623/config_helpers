@@ -33,6 +33,9 @@ Powershell has multiple syntax flavors. `generate_environment_variables_batchfil
 to .Net developers, while `generate_environment_variables_batchfilev2.ps1` is probably the more common way to do the 
 same job
 
+`generate_environment_variables_batchfilev3.ps1` is a further refined version of the batch file generator
+
+
 [1]: https://github.com/StackExchange/blackbox
 [2]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux 
 [3]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
