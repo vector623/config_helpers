@@ -1,0 +1,14 @@
+[Unit]
+Description=Demo SystemD Service, this gets generated via a powershell script!
+
+[Service]
+WorkingDirectory=/var/www/webapp/
+ExecStart=/usr/bin/dotnet /var/www/webapp/WebApp.dll
+Restart=always
+RestartSec=10
+SyslogIdentifier=webapp
+User=www-data
+ENVIRONMENT_VARIABLES
+
+[Install]
+WantedBy=multi-user.target
